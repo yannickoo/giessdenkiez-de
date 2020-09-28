@@ -1,15 +1,16 @@
 import React, { cloneElement, Children } from 'react';
 import styled from 'styled-components';
 import { isMobile } from 'react-device-detect';
-import Actions from '../../../state/Actions';
+// import Actions from '../../../state/Actions';
 import store from '../../../state/Store';
-import { connect } from 'unistore/react';
+// import { connect } from 'unistore/react';
+// import { useStoreState } from '../../../state/unistore-hooks';
 
 // import history from '../../../history';
 
 import OverlayTitle from '../OverlayTitle/';
 import OverlayEvent from '../OverlayEvent/';
-import OverlayIcon from '../OverlayIcon/';
+import Icon from '../../Icons';
 import OverlayBeta from '../OverlayBeta/';
 import OverlayDescription from '../OverlayDescription/';
 import ButtonRound from '../../../components/ButtonRound/';
@@ -64,7 +65,7 @@ const OverlayTop = p => {
     <StyledTop>
       <Wrapper>
         <OverlayTitle size='xxl' title={title} />
-        <OverlayIcon icon='trees' />
+        <Icon iconType='trees' />
         <OverlayBeta />
       </Wrapper>
       <OverlayTitle size='xxl' title={subline} />
@@ -91,9 +92,11 @@ const OverlayTop = p => {
   );
 };
 
-export default connect(
-  state => ({
-    user: state.user,
-  }),
-  Actions
-)(OverlayTop);
+// export default connect(
+//   state => ({
+//     user: state.user,
+//   }),
+//   Actions
+// )(OverlayTop);
+
+export default OverlayTop;
